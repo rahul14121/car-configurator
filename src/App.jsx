@@ -10,6 +10,7 @@ function App() {
     <>
       <div className = "App">
         <Canvas>
+          <color attach="background" args={["#101010"]}/>
           <Scene/>
         </Canvas>
       </div>
