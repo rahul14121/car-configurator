@@ -1,0 +1,11 @@
+Model Information:
+* title:	Porsche Carrera GT 2003 Street
+* source:	https://sketchfab.com/3d-models/porsche-carrera-gt-2003-street-1880cd019d6f4bc2a8aec8a220bd5f0c
+* author:	Pitstop 3D - Euro (https://sketchfab.com/carfan100)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Porsche Carrera GT 2003 Street" (https://sketchfab.com/3d-models/porsche-carrera-gt-2003-street-1880cd019d6f4bc2a8aec8a220bd5f0c) by Pitstop 3D - Euro (https://sketchfab.com/carfan100) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
