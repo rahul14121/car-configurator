@@ -1,8 +1,8 @@
-import { useCustomization } from "../contexts/Customization"
+import { colours, useCustomization } from "../contexts/Customization"
 
 const Configurator = () => {
-    const {car, setCar, accessory, setAccessory} = useCustomization();
-    console.log(car);
+    const {car, setCar, accessory, setAccessory, carColour, setCarColour} = useCustomization();
+    console.log(carColour);
     return <div className="configurator">
         <div className="configurator_section">
             <div className="configurator_section_title">
@@ -19,6 +19,25 @@ const Configurator = () => {
                         Car 2
                     </div>
                 </div>
+            </div>
+        </div>
+        <div className="configurator_section">
+            <div className="configurator_section_title">
+                Car Colour
+            </div>
+            <div className="configurator_section_values">
+                {colours.map((item, index) => (
+                    <div key={index} className={`item ${item.colour === carColour.colour ? "item-active": ""}`} onClick={() => setCarColour(item)}>
+                    <div className="item_colour_preview" style={{
+                        backgroundColor: item.colour
+                    }} />
+                    <div className="item_option">
+                        {item.name}
+                    </div>
+                </div>
+
+                ))
+                } 
             </div>
         </div>
         <div className="configurator_section">

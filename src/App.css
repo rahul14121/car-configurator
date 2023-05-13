@@ -15,7 +15,7 @@
 
 .configurator{
   position: fixed;
-  right: 24px;
+  right: 96px;
   width: 320px;
   bottom: 25vh;
   color: white;
@@ -34,8 +34,9 @@
 .configurator_section_values{
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 24px;
   margin-top: 24px;
+  flex-wrap: wrap;
 }
 
 .item_option {
@@ -44,8 +45,22 @@
   transition: 0.4s color;
 }
 
+.item_colour_preview {
+  width: 32px;
+  height: 32px;
+  border-radius: 100%;
+  border: solid 3px #999999
+}
+
+.item.item-active .item_colour_preview{
+  border: solid 3px white;
+}
+
 .item {
   transition: 0.4s opacity;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .item:hover {

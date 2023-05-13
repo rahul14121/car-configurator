@@ -13,11 +13,12 @@ import { useCustomization } from '../contexts/Customization'
 
 const Car1 = (props) => {
   const { nodes, materials } = useGLTF('./models/car1/car1.gltf')
-  const { accessory } = useCustomization();
+  console.log(materials)
+  const { accessory, carColour } = useCustomization();
   return (
     <group {...props} dispose={null}>
       <group position={[0, -0.01, 0]} rotation={[3.13, 0, Math.PI]}>
-        <mesh geometry={nodes.Object_4.geometry} material={materials.Main_Paint} />
+        <mesh geometry={nodes.Object_4.geometry} material={materials.Main_Paint} material-color={carColour.name}/>
         <mesh geometry={nodes.Object_5.geometry} material={materials.Black} />
         <mesh geometry={nodes.Object_6.geometry} material={materials.Black} />
         <mesh geometry={nodes.Object_7.geometry} material={materials.Chrome} />

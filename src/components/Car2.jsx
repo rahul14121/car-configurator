@@ -13,7 +13,7 @@ import { useCustomization } from '../contexts/Customization';
 
 const Car2 = (props) =>  {
   const { nodes, materials } = useGLTF('./models/car2/car2.gltf')
-  const { accessory } = useCustomization();
+  const { accessory, carColour } = useCustomization();
   return (
     <group {...props} dispose={null}>
       <group rotation={[-Math.PI / 2, 0, 0]} scale={2.75}>
@@ -94,8 +94,8 @@ const Car2 = (props) =>  {
             <mesh geometry={nodes.GEO_DOOR_RR_SUB3_Windows_0.geometry} material={materials.Windows} />
             <mesh geometry={nodes.GEO_DOOR_RR_SUB2_Windows_alpha_0.geometry} material={materials.Windows_alpha} />
             <mesh geometry={nodes.GEO_DOOR_RR_SUB5_Carbon_Mult50_0.geometry} material={materials.Carbon_Mult50} />
-            <mesh geometry={nodes.GEO_DOOR_RR_SUB1_Carpaint_Black_0.geometry} material={materials.Carpaint_Black} />
-            <mesh geometry={nodes.GEO_DOOR_RR_SUB0_Carpaint_0.geometry} material={materials.Carpaint} />
+            <mesh geometry={nodes.GEO_DOOR_RR_SUB1_Carpaint_Black_0.geometry} material={materials.Carpaint_Black} material-color={carColour.name}/>
+            <mesh geometry={nodes.GEO_DOOR_RR_SUB0_Carpaint_0.geometry} material={materials.Carpaint} material-color={carColour.name}/>
           </group>
           <group position={[18.1, 49.45, 8.91]} rotation={[-0.38, -1.01, -0.68]}>
             <group position={[-15.03, -12.05, 30.66]} rotation={[0.57, -0.85, 0.15]}>
@@ -125,8 +125,8 @@ const Car2 = (props) =>  {
             <mesh geometry={nodes.polymsh5_SUB4_Windows_0.geometry} material={materials.Windows} />
             <mesh geometry={nodes.polymsh5_SUB5_Windows_alpha_0.geometry} material={materials.Windows_alpha} />
             <mesh geometry={nodes.polymsh5_SUB3_Carbon_Mult50_0.geometry} material={materials.Carbon_Mult50} />
-            <mesh geometry={nodes.polymsh5_SUB1_Carpaint_Black_0.geometry} material={materials.Carpaint_Black} />
-            <mesh geometry={nodes.polymsh5_SUB0_Carpaint_0.geometry} material={materials.Carpaint} />
+            <mesh geometry={nodes.polymsh5_SUB1_Carpaint_Black_0.geometry} material={materials.Carpaint_Black} material-color={carColour.name}/>
+            <mesh geometry={nodes.polymsh5_SUB0_Carpaint_0.geometry} material={materials.Carpaint} material-color={carColour.name}/>
           </group>
           <group position={[-34.81, 15.46, -65.08]}>
             <group position={[1.82, 0, 0]} rotation={[-Math.PI / 2, 0, Math.PI / 2]}>
@@ -151,7 +151,7 @@ const Car2 = (props) =>  {
                 <group rotation={[0, 0, 0.9]}>
                   <mesh geometry={nodes.g_Wing_SUB1_Chrome_0.geometry} material={materials.Chrome} />
                   <mesh geometry={nodes.g_Wing_SUB3_Details_0.geometry} material={materials.Details} />
-                  <mesh geometry={nodes.g_Wing_SUB2_Carpaint_0.geometry} material={materials.Carpaint} />
+                  <mesh geometry={nodes.g_Wing_SUB2_Carpaint_0.geometry} material={materials.Carpaint} material-color={carColour.name}/>
                   <mesh geometry={nodes.g_Wing_SUB0_Matte_Black_0.geometry} material={materials.Matte_Black} />
                 </group>
               </group>
@@ -184,17 +184,17 @@ const Car2 = (props) =>  {
             <mesh geometry={nodes.GEO_WIPER1_2_Plastics_0.geometry} material={materials.Plastics} position={[-0.02, -0.44, -0.1]} rotation={[-1.53, 0.01, 1.5]} />
           </group>
           <group position={[0, 14.29, 53.21]} rotation={[0, Math.PI / 2, 0]}>
-            <mesh geometry={nodes.g_Body_SUB6_Chrome_0.geometry} material={materials.Chrome} />
+            <mesh geometry={nodes.g_Body_SUB6_Chrome_0.geometry} material={materials.Chrome}/>
             <mesh geometry={nodes.g_Body_SUB7_Clear_Glass_0.geometry} material={materials.Clear_Glass} />
             <mesh geometry={nodes.g_Body_SUB3_Plastics_0.geometry} material={materials.Plastics} />
             <mesh geometry={nodes.g_Body_SUB13_Taillights_0.geometry} material={materials.Taillights} />
             <mesh geometry={nodes.g_Body_SUB0_Windows_0.geometry} material={materials.Windows} />
             <mesh geometry={nodes.g_Body_SUB12_Mechanicals_0.geometry} material={materials.Mechanicals} />
             <mesh geometry={nodes.g_Body_SUB10_Details_0.geometry} material={materials.Details} />
-            <mesh geometry={nodes.g_Body_SUB4_Carpaint_Black_0.geometry} material={materials.Carpaint_Black} />
+            <mesh geometry={nodes.g_Body_SUB4_Carpaint_Black_0.geometry} material={materials.Carpaint_Black} material-color={carColour.name}/>
             <mesh geometry={nodes.g_Body_SUB5_Carbon_Mult50_0.geometry} material={materials.Carbon_Mult50} />
-            <mesh geometry={nodes.g_Body_SUB1_Carpaint_Black_0.geometry} material={materials.Carpaint_Black} />
-            <mesh geometry={nodes.g_Body_SUB2_Carpaint_0.geometry} material={materials.Carpaint} />
+            <mesh geometry={nodes.g_Body_SUB1_Carpaint_Black_0.geometry} material={materials.Carpaint_Black} material-color={carColour.name}/>
+            <mesh geometry={nodes.g_Body_SUB2_Carpaint_0.geometry} material={materials.Carpaint} material-color={carColour.name}/>
             <mesh geometry={nodes.g_Body_SUB11_Matte_Black_0.geometry} material={materials.Matte_Black} />
             <mesh geometry={nodes.g_Body_SUB9_Grid2_0.geometry} material={materials.Grid2} />
             <mesh geometry={nodes.g_Body_SUB8_Grid1_Mult70_0.geometry} material={materials.Grid1_Mult70} />
@@ -202,7 +202,7 @@ const Car2 = (props) =>  {
           <group position={[0, 33.86, 46.54]}>
             <group position={[0, -8.01, 26.45]} rotation={[0, Math.PI / 2, 0]}>
               <mesh geometry={nodes.GEO_HOOD_SUB2_Details_0.geometry} material={materials.Details} />
-              <mesh geometry={nodes.GEO_HOOD_SUB0_Carpaint_0.geometry} material={materials.Carpaint} />
+              <mesh geometry={nodes.GEO_HOOD_SUB0_Carpaint_0.geometry} material={materials.Carpaint} material-color={carColour.name}/>
               <mesh geometry={nodes.GEO_HOOD_SUB1_Matte_Black_0.geometry} material={materials.Matte_Black} />
             </group>
           </group>
@@ -300,7 +300,7 @@ const Car2 = (props) =>  {
           <mesh geometry={nodes.LED_OIL_1_2_INT_DISPLAY_0.geometry} material={materials.INT_DISPLAY} />
           <mesh geometry={nodes.LED_OIL_2_2_INT_DISPLAY_0.geometry} material={materials.INT_DISPLAY} />
           <mesh geometry={nodes.LED_OIL_3_2_INT_DISPLAY_0.geometry} material={materials.INT_DISPLAY} />
-          <mesh geometry={nodes.GEO_frontFender_2_Carpaint_0.geometry} material={materials.Carpaint} />
+          <mesh geometry={nodes.GEO_frontFender_2_Carpaint_0.geometry} material={materials.Carpaint} material-color={carColour.name}/>
           <mesh geometry={nodes.polymsh_detached73_SUB0_Windows_0.geometry} material={materials.Windows} />
           <mesh geometry={nodes.polymsh_detached73_SUB1_Windows_alpha_0.geometry} material={materials.Windows_alpha} />
         </group>
