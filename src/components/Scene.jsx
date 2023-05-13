@@ -4,12 +4,21 @@ import { MeshReflectorMaterial, PresentationControls, Stage } from "@react-three
 import { Suspense } from "react";
 import Car1 from "./Car1";
 import Car2 from "./Car2";
+import { useCustomization } from "../contexts/Customization";
 // import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 
-const Scene = () => {
+function CarSelect({carState}){
+  if (carState === "car1") {
+    return <Car1/>
+  }
+  return <Car2/>
+}
 
+const Scene = () => {
+  
 
     // const gltf = useLoader(GLTFLoader, './models/car.gltf')
+    const {car, setCar} = useCustomization();
     return (
         <PresentationControls speed={1.5} global zoom={0.7} polar={[-0.1, Math.PI / 4]}>
           <Stage environment={"city"} intensity={0.6} contactShadow={false}>
@@ -18,11 +27,10 @@ const Scene = () => {
             <meshNormalMaterial/>
         </mesh> */}
         <Suspense fallback={null}>
-            {/* <Car1/> */}
-            <Car2/>
+            <CarSelect carState={car}/>
         </Suspense>
         </Stage>
-        <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.6, 0]}>
+        <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.9, 0]}>
             <planeGeometry args={[170, 170]} />
             <MeshReflectorMaterial
               blur={[300, 100]}

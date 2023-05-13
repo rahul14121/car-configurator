@@ -9,9 +9,11 @@ Title: Porsche Carrera GT 2003 Street
 
 import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
+import { useCustomization } from '../contexts/Customization'
 
 const Car1 = (props) => {
   const { nodes, materials } = useGLTF('./models/car1/car1.gltf')
+  const { accessory } = useCustomization();
   return (
     <group {...props} dispose={null}>
       <group position={[0, -0.01, 0]} rotation={[3.13, 0, Math.PI]}>
@@ -27,9 +29,13 @@ const Car1 = (props) => {
         <mesh geometry={nodes.Object_13.geometry} material={materials.Gold} />
       </group>
       <group position={[0, 0.05, -0.08]} rotation={[-Math.PI, 0, -Math.PI]} scale={[0.61, 0.65, 0.65]}>
-        <mesh geometry={nodes.Object_15.geometry} material={materials.Chrome} />
-        <mesh geometry={nodes.Object_16.geometry} material={materials.Gold} />
+        <mesh geometry={nodes.Object_15.geometry} material={materials.Chrome}/>
+        <mesh geometry={nodes.Object_16.geometry} material={materials.Gold} visible={accessory === 1}/>
       </group>
+      {/* <group position={[0, 0.05, -0.08]} rotation={[-Math.PI, 0, -Math.PI]} scale={[0.61, 0.65, 0.65]}>
+        <mesh geometry={nodes.Object_15.geometry} material={materials.Chrome} visible={accessory === 1}/>
+        <mesh geometry={nodes.Object_16.geometry} material={materials.Gold} visible={accessory === 1}/>
+      </group> */}
       <mesh geometry={nodes.Object_18.geometry} material={materials.Rims} position={[0, 0.05, 0.02]} scale={[0.61, 0.65, 0.65]} />
       <mesh geometry={nodes.Object_20.geometry} material={materials.Tyres} position={[0, 0.05, 0.02]} scale={[0.61, 0.65, 0.65]} />
     </group>

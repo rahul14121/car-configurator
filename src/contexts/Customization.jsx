@@ -4,7 +4,8 @@ const CustomizationContext = createContext({});
 
 export const CustomizationProvider = (props) => {
     const [car, setCar] = useState("car1");
-    return <CustomizationContext.Provider value={{car, setCar}}>
+    const [accessory, setAccessory] = useState(0)
+    return <CustomizationContext.Provider value={{car, setCar, accessory, setAccessory}}>
         {props.children}
     </CustomizationContext.Provider>
 }

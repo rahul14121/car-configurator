@@ -9,9 +9,11 @@ Title: AC - Mclaren P1
 
 import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
+import { useCustomization } from '../contexts/Customization';
 
 const Car2 = (props) =>  {
   const { nodes, materials } = useGLTF('./models/car2/car2.gltf')
+  const { accessory } = useCustomization();
   return (
     <group {...props} dispose={null}>
       <group rotation={[-Math.PI / 2, 0, 0]} scale={2.75}>
@@ -23,7 +25,7 @@ const Car2 = (props) =>  {
           </group>
           <group position={[-36.41, 14.32, 53.21]}>
             <group position={[1.8, 0, 0]} rotation={[-Math.PI / 2, 0, Math.PI / 2]}>
-              <mesh geometry={nodes.g_Susp_Hub_RF_SUB1_Brake_Caliper_0.geometry} material={materials.Brake_Caliper} />
+              <mesh geometry={nodes.g_Susp_Hub_RF_SUB1_Brake_Caliper_0.geometry} material={materials.Brake_Caliper} visible={accessory === 1}/>
               <mesh geometry={nodes.g_Susp_Hub_RF_SUB0_Mechanicals_0.geometry} material={materials.Mechanicals} />
               <mesh geometry={nodes.g_Susp_Hub_RF_SUB2_Details_0.geometry} material={materials.Details} />
             </group>
@@ -51,7 +53,7 @@ const Car2 = (props) =>  {
           </group>
           <group position={[36.41, 14.32, 53.21]}>
             <group position={[-1.8, 0, 0]} rotation={[-Math.PI / 2, 0, Math.PI / 2]}>
-              <mesh geometry={nodes.g_Susp_Hub_LF_SUB1_Brake_Caliper_0.geometry} material={materials.Brake_Caliper} />
+              <mesh geometry={nodes.g_Susp_Hub_LF_SUB1_Brake_Caliper_0.geometry} material={materials.Brake_Caliper} visible={accessory === 1}/>
               <mesh geometry={nodes.g_Susp_Hub_LF_SUB0_Mechanicals_0.geometry} material={materials.Mechanicals} />
               <mesh geometry={nodes.g_Susp_Hub_LF_SUB2_Details_0.geometry} material={materials.Details} />
             </group>
@@ -128,7 +130,7 @@ const Car2 = (props) =>  {
           </group>
           <group position={[-34.81, 15.46, -65.08]}>
             <group position={[1.82, 0, 0]} rotation={[-Math.PI / 2, 0, Math.PI / 2]}>
-              <mesh geometry={nodes.g_Susp_Hub_RR_SUB1_Brake_Caliper_0.geometry} material={materials.Brake_Caliper} />
+              <mesh geometry={nodes.g_Susp_Hub_RR_SUB1_Brake_Caliper_0.geometry} material={materials.Brake_Caliper} visible={accessory === 1}/>
               <mesh geometry={nodes.g_Susp_Hub_RR_SUB0_Mechanicals_0.geometry} material={materials.Mechanicals} />
               <mesh geometry={nodes.g_Susp_Hub_RR_SUB2_Details_0.geometry} material={materials.Details} />
             </group>
@@ -161,7 +163,7 @@ const Car2 = (props) =>  {
           <mesh geometry={nodes.g_Susp_ALever_Btm_RR_2_Mechanicals_0.geometry} material={materials.Mechanicals} position={[-15.64, 7.72, -69.88]} rotation={[-Math.PI / 2, 0, Math.PI / 2]} />
           <group position={[34.81, 15.46, -65.08]}>
             <group position={[-1.82, 0, 0]} rotation={[-Math.PI / 2, 0, Math.PI / 2]}>
-              <mesh geometry={nodes.g_Susp_Hub_LR_SUB1_Brake_Caliper_0.geometry} material={materials.Brake_Caliper} />
+              <mesh geometry={nodes.g_Susp_Hub_LR_SUB1_Brake_Caliper_0.geometry} material={materials.Brake_Caliper} visible={accessory === 1}/>
               <mesh geometry={nodes.g_Susp_Hub_LR_SUB0_Mechanicals_0.geometry} material={materials.Mechanicals} />
               <mesh geometry={nodes.g_Susp_Hub_LR_SUB2_Details_0.geometry} material={materials.Details} />
             </group>

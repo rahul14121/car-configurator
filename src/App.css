@@ -20,6 +20,9 @@
   bottom: 25vh;
   color: white;
   padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
 }
 
 .configurator_section_title{
@@ -38,9 +41,18 @@
 .item_option {
   font-size: 16px;
   color: #acacac;
+  transition: 0.4s color;
+}
+
+.item {
+  transition: 0.4s opacity;
 }
 
 .item:hover {
   opacity: 0.8;
   cursor: pointer;
+}
+
+.item.item-active .item_option {
+  color: white
 }
