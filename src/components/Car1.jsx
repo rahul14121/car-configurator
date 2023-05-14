@@ -13,7 +13,6 @@ import { useCustomization } from '../contexts/Customization'
 
 const Car1 = (props) => {
   const { nodes, materials } = useGLTF('./models/car1/car1.gltf')
-  console.log(materials)
   const { accessory, carColour } = useCustomization();
   return (
     <group {...props} dispose={null}>
