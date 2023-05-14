@@ -1,6 +1,6 @@
 # car-configurator
 
-My repo for a car configurator, part of the technical assessment of the Mastered Bootcamp.
+My repo for a car configurator, part of the technical assessment of the Mastered Bootcamp. [Check it out here!](https://car-configurator-4e6b9.web.app/)
 
 ## Project description
 
