@@ -15,3 +15,5 @@ jobs:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_CAR_CONFIGURATOR_4E6B9 }}'
           projectId: car-configurator-4e6b9
+        env:
+          FIREBASE_CLI_EXPERIMENTS: webframeworks
