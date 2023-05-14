@@ -4,7 +4,7 @@ const CustomizationContext = createContext({});
 
 export const colours = [
     {
-      colour: "#683434",
+      colour: "#FF0000",
       name: "red",
     },
     {
@@ -12,11 +12,11 @@ export const colours = [
       name: "green",
     },
     {
-      colour: "#659994",
+      colour: "#0000FF",
       name: "blue",
     },
     {
-      colour: "#896599",
+      colour: "#A020F0",
       name: "purple",
     },
     {
@@ -41,7 +41,8 @@ export const CustomizationProvider = (props) => {
     const [car, setCar] = useState("car1");
     const [accessory, setAccessory] = useState(0)
     const [carColour, setCarColour] = useState(colours[2])
-    return <CustomizationContext.Provider value={{car, setCar, accessory, setAccessory, carColour, setCarColour}}>
+    const [carDetails, setCarDetails] = useState(false)
+    return <CustomizationContext.Provider value={{car, setCar, accessory, setAccessory, carColour, setCarColour, carDetails, setCarDetails}}>
         {props.children}
     </CustomizationContext.Provider>
 }

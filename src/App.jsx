@@ -4,6 +4,7 @@ import './App.css'
 import Scene from './components/Scene'
 import Configurator from './components/Configurator'
 import { CustomizationProvider } from './contexts/Customization'
+import Details from './components/Details'
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
           <Scene/>
         </Canvas>
         <Configurator/>
+        <Details/>
       </div>
       </CustomizationProvider>
     </>
